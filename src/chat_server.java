@@ -46,8 +46,6 @@ public class chat_server extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        msg_text.setText("jTextField1");
-
         msg_send.setText("jButton1");
         msg_send.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +86,13 @@ public class chat_server extends javax.swing.JFrame {
 
     private void msg_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_msg_sendActionPerformed
         // TODO add your handling code here:
+        try{
+        String msgout = "";
+        msgout = msg_text.getText();
+        dout.writeUTF(msgout);//sending the server message to the client.
+        }catch(Exception e){
+            //handle the exception here
+        }
         
     }//GEN-LAST:event_msg_sendActionPerformed
 
